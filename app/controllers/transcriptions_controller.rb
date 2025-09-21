@@ -1,5 +1,5 @@
 class TranscriptionsController < ApplicationController
-  protect_from_forgery with: :null_session, only: [:create] # because JS posts JSON
+  protect_from_forgery with: :null_session, only: [ :create ] # because JS posts JSON
 
   def new
     # renders app/views/transcriptions/new.html.erb
@@ -7,7 +7,7 @@ class TranscriptionsController < ApplicationController
 
   def create
     # Expect JSON: { text: "full transcript..." }
-    transcription_text = params[:text] || (request.body.read.present? && JSON.parse(request.body.read)['text'] rescue nil)
+    transcription_text = params[:text] || (request.body.read.present? && JSON.parse(request.body.read)["text"] rescue nil)
     if transcription_text.blank?
       render json: { error: "No text provided" }, status: :unprocessable_entity
       return

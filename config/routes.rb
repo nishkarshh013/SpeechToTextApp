@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "transcriptions#new"
   get "/transcribe", to: "transcriptions#new"
-  resources :transcriptions, only: [:create, :show]
+  resources :transcriptions, only: [ :create, :show ]
   get "/summary/:id", to: "summaries#show"
 end

@@ -29,7 +29,7 @@ class SummariesController < ApplicationController
   def generate_summary(text)
     # Example using OpenAI. Require OPENAI_API_KEY in ENV.
     # This is a simple wrapper using HTTP; replace with your client library if you prefer.
-    api_key = ENV['OPENAI_API_KEY']
+    api_key = ENV["OPENAI_API_KEY"]
     raise "OpenAI API key missing" if api_key.blank?
     binding.pry
     prompt = <<~PROMPT
