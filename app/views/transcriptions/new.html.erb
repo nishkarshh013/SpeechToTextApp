@@ -1,0 +1,17 @@
+<h1>Voice Transcription</h1>
+
+<div data-controller="transcribe">
+  <div>
+    <button data-action="click->transcribe#start" data-transcribe-target="startBtn">Start Listening</button>
+    <button data-action="click->transcribe#stop" data-transcribe-target="stopBtn" disabled>Stop Listening</button>
+  </div>
+
+  <h3>Live transcription</h3>
+  <div id="live" data-transcribe-target="live" style="white-space: pre-wrap; border: 1px solid #ddd; padding: 1rem; min-height: 4rem;"></div>
+
+  <h3>Full transcription</h3>
+  <div id="full" data-transcribe-target="full" style="white-space: pre-wrap; border: 1px solid #ddd; padding: 1rem; min-height: 4rem;"></div>
+
+  <h3>Summary</h3>
+  <div id="summary" data-transcribe-target="summary" style="white-space: pre-wrap; border: 1px solid #ddd; padding: 1rem; min-height: 4rem;"></div>
+</div>
